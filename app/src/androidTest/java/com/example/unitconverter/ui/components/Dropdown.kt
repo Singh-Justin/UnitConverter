@@ -1,13 +1,12 @@
 package com.example.unitconverter.ui.components
 
 import androidx.compose.ui.test.junit4.createComposeRule
-import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import org.junit.Rule
 import org.junit.Test
 
-class DropdownTest {
+class Dropdown {
 
     @get:Rule
     val composeTestRule = createComposeRule()
@@ -29,7 +28,7 @@ class DropdownTest {
             }
         }
 
-        
+
         composeTestRule.onNodeWithText("Select Item").performClick()
         composeTestRule.onNodeWithText("Item 2").performClick()
 

@@ -1,0 +1,11 @@
+# Android Studio / IntelliJ
+/.idea/
+.gradle/
+/local.properties
+
+# Gradle files
+/.gradle/
+/build/
+
+# Ignore signing files for release builds
+/keystore.properties
