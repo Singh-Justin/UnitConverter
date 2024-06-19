@@ -47,14 +47,7 @@ fun Dropdown(text: String, items: List<DropdownItem>, onSelect: (item: DropdownI
             onDismissRequest = handleClose,
 
             ) {
-            items.map { item ->
-                DropdownMenuItem(
-                    text = { Text(item.label) },
-                    onClick = {
-                        handleSelect(item)
-                    }
-                )
-            }
+            
         }
     }
 }
