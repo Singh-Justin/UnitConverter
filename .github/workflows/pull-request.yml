@@ -1,0 +1,33 @@
+name: Pull Request
+
+on:
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Setup JDK
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+
+      # Setup Android SDK
+      - name: Setup Android SDK
+        uses: reactivecircus/android-setup-action@v2
+        with:
+          sdk-platform-tools: true
+          sdk-build-tools: 31.0.0 # Replace with your desired build tools version
+          sdk-platform: android-31 # Replace with your desired API level
+
+      # Run tests
+      - name: Run Android Tests
+        run: |
+          ./gradlew connectedAndroidTest
